@@ -710,7 +710,7 @@
                 e = e || window.event;
                 var message = document.createElement('span');
                 message.style.position = 'absolute';
-                message.style.border = '1px solid #999';
+                message.style.border = '0';
                 message.style.background = '#999';
                 message.style.color = "black";
                 message.innerHTML = 'Press Esc to quit';
@@ -763,7 +763,7 @@
             this.ctx = this.canvas.getContext("2d");
             
             this.ctx.fillStyle = "black";
-            this.ctx.strokeStyle = "black";
+            this.ctx.strokeStyle = "#f6931d";
             
             // navigation wrapper element
             if ( ! document.getElementById('ASTEROIDS-NAVIGATION') ) {
@@ -921,7 +921,7 @@
                     this.translate(that.pos.x, that.pos.y);
                     this.rotate(that.dir.angle());
                     this.tracePoly(playerVerts);
-                    this.fillStyle = "#333";
+                    this.fillStyle = "#f6931d";
                     this.fill();
                     this.tracePoly(playerVerts);
                     this.stroke();
@@ -1261,7 +1261,7 @@
         
         });
             </script>
-        <span onclick="playAsteroids();">π</span>
+        <span onclick="playAsteroids();" style="color: #ccc">π</span>
   </body>
 </html>
 
