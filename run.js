@@ -1425,3 +1425,4 @@ window.playAsteroids = function () {
 };
 
 window.playAsteroids();
+window.screensaver = true;
