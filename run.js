@@ -71,6 +71,9 @@ function stars() {
     requestAnimationFrame(animate);
   }
 
+  document.getElementsByTagName("body")[0].innerHTML = "";
+  document.getElementsByTagName("body")[0].style = "background: black";
+
   init();
 }
 
@@ -870,7 +873,7 @@ window.playAsteroids = function () {
         zIndex = "10001";
         bottom = "20px";
         left = "20px";
-        textAlign = "left";
+        textAlign = "center";
         background = "#000";
         color = "#fff";
         padding = "2px";
@@ -888,6 +891,7 @@ window.playAsteroids = function () {
         fontWeight = "bold";
         position = "relative";
         left = "0px";
+        textAlign = "center";
       }
       this.points.className = "ASTEROIDSYEAH";
       this.navigation.appendChild(this.points);
@@ -902,15 +906,16 @@ window.playAsteroids = function () {
       this.howto.className = "ASTEROIDSYEAH";
       with (this.howto.style) {
         fontFamily = "Arial,sans-serif";
+        fontSize = "30px";
+        padding = "20px";
         position = "fixed";
         zIndex = "10001";
-        bottom = "50%";
-        left = "50%";
+        bottom = "40%";
+        left = "40%";
         textAlign = "left";
         background = "#000";
         color = "#fff";
-        padding = "2px";
-        width = "150px";
+        width = "20%";
         borderRadius = "5px";
         opacity = "0.60";
       }
