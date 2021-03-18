@@ -74,14 +74,13 @@
     <script>
       function loadAsteroids() {
         var script = document.createElement("script");
-        script.async = true;
+
         script.setAttribute("type", "text/javascript");
-        script.src = "https://dominiek.github.com/asteroids/three.min.js";
+        script.src = "three.min.js";
         document.getElementsByTagName("head")[0].appendChild(script);
         var script2 = document.createElement("script");
-        script2.async = true;
         script2.setAttribute("type", "text/javascript");
-        script2.src = "https://dominiek.github.com/asteroids/assets/run.js";
+        script2.src = "assets/run.js";
         document.getElementsByTagName("head")[0].appendChild(script2);
       }
     </script>
