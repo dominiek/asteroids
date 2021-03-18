@@ -510,7 +510,10 @@ window.playAsteroids = function () {
       "outline: 2px dotted red;"
     );
 
-    this.pos = new Vector(100, 100);
+    this.pos = new Vector(
+      Math.round(window.innerWidth / 3),
+      Math.round(window.innerHeight / 3)
+    );
     this.lastPos = false;
     this.vel = new Vector(0, 0);
     this.dir = new Vector(0, 1);
@@ -907,6 +910,7 @@ window.playAsteroids = function () {
       with (this.howto.style) {
         fontFamily = "Arial,sans-serif";
         fontSize = "30px";
+        lineHeight = "40px";
         padding = "20px";
         position = "fixed";
         zIndex = "10001";
