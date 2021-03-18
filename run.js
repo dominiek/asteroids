@@ -1,3 +1,5 @@
+var baseUrl = "https://dominiek.github.com/asteroids/";
+
 function stars() {
   let scene, camera, renderer, stars, starGeo;
 
@@ -30,7 +32,7 @@ function stars() {
     }
 
     let sprite = new THREE.TextureLoader().load(
-      "https://dominiek.github.com/asteroids/assets/images/star.png"
+      baseUrl + "assets/images/star.png"
     );
     let starMaterial = new THREE.PointsMaterial({
       color: 0xaaaaaa,
@@ -85,9 +87,7 @@ window.playAsteroids = function () {
       "her15",
     ];
     const id = tracks[Math.floor(Math.random() * tracks.length)];
-    const track = new Audio(
-      "https://dominiek.github.com/asteroids/assets/sounds/" + id + ".mp3"
-    );
+    const track = new Audio(baseUrl + "assets/sounds/" + id + ".mp3");
     track.onended = function () {
       setTimeout(function () {
         playBackgroundMusic();
@@ -98,27 +98,17 @@ window.playAsteroids = function () {
 
   function playSounds(type) {
     if (type === "fire") {
-      new Audio(
-        "https://dominiek.github.com/asteroids/assets/sounds/shoot.wav"
-      ).play();
+      new Audio(baseUrl + "assets/sounds/shoot.wav").play();
     }
     if (type === "atmosphere") {
-      new Audio(
-        "https://dominiek.github.com/asteroids/assets/sounds/atmosphere.wav"
-      ).play();
+      new Audio(baseUrl + "assets/sounds/atmosphere.wav").play();
     }
     if (type === "engine") {
-      new Audio(
-        "https://dominiek.github.com/asteroids/assets/sounds/rattle.wav"
-      ).play();
+      new Audio(baseUrl + "assets/sounds/rattle.wav").play();
     }
     if (type === "explosion") {
       const id = Math.floor(Math.random() * 4) + 1;
-      new Audio(
-        "https://dominiek.github.com/asteroids/assets/sounds/explosion" +
-          id +
-          ".wav"
-      ).play();
+      new Audio(baseUrl + "assets/sounds/explosion" + id + ".wav").play();
     }
   }
 
@@ -808,22 +798,6 @@ window.playAsteroids = function () {
       zIndex = "10000";
     }
 
-    // Is IE
-    if (typeof G_vmlCanvasManager != "undefined") {
-      this.canvas = G_vmlCanvasManager.initElement(this.canvas);
-      if (!this.canvas.getContext) {
-        alert(
-          "So... you're using IE?  Please join me at http://github.com/erkie/erkie.github.com if you think you can help"
-        );
-      }
-    } else {
-      if (!this.canvas.getContext) {
-        alert(
-          "This program does not yet support your browser. Please join me at http://github.com/erkie/erkie.github.com if you think you can help"
-        );
-      }
-    }
-
     addEvent(this.canvas, "mousedown", function (e) {
       e = e || window.event;
       var message = document.createElement("span");
@@ -895,10 +869,12 @@ window.playAsteroids = function () {
         bottom = "20px";
         left = "20px";
         textAlign = "left";
-        background = "#fff";
-        color = "#222";
+        background = "#000";
+        color = "#fff";
         padding = "2px";
-        width = "400px";
+        width = "150px";
+        borderRadius = "5px";
+        opacity = "0.60";
       }
       this.gameContainer.appendChild(this.navigation);
 
@@ -916,6 +892,31 @@ window.playAsteroids = function () {
     } else {
       this.navigation = document.getElementById("ASTEROIDS-NAVIGATION");
       this.points = document.getElementById("ASTEROIDS-POINTS");
+    }
+
+    if (!document.getElementById("ASTEROIDS-HOWTO")) {
+      this.howto = document.createElement("div");
+      this.howto.id = "ASTEROIDS-HOWTO";
+      this.howto.className = "ASTEROIDSYEAH";
+      with (this.howto.style) {
+        fontFamily = "Arial,sans-serif";
+        position = "fixed";
+        zIndex = "10001";
+        bottom = "50%";
+        left = "50%";
+        textAlign = "left";
+        background = "#000";
+        color = "#fff";
+        padding = "2px";
+        width = "150px";
+        borderRadius = "5px";
+        opacity = "0.60";
+      }
+      this.howto.innerHTML = "Use arrow keys to move, space bar to shoot";
+      this.gameContainer.appendChild(this.howto);
+      setTimeout(() => {
+        this.gameContainer.removeChild(this.howto);
+      }, 5000);
     }
 
     // Because IE quirks does not understand position: fixed we set to absolute and just reposition it everything frame
@@ -1423,12 +1424,4 @@ window.playAsteroids = function () {
   window.ASTEROIDSPLAYERS[window.ASTEROIDSPLAYERS.length] = new Asteroids();
 };
 
-function loadThree() {
-  var script = document.createElement("script");
-  script.setAttribute("type", "text/javascript");
-  script.src = "https://dominiek.github.com/asteroids/three.min.js";
-  document.getElementsByTagName("head")[0].appendChild(script);
-}
-
-loadThree();
 window.playAsteroids();

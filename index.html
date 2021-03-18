@@ -1,74 +1,101 @@
-
 <!DOCTYPE html>
 <html lang="en-US">
-
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,maximum-scale=2">
-    <link rel="stylesheet" type="text/css" media="screen" href="/asteroids/assets/css/style.css?v=b269cbe8b8e777a6d78526e02fbc0a4d0daf1d9f">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,maximum-scale=2" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="/asteroids/assets/css/style.css?v=b269cbe8b8e777a6d78526e02fbc0a4d0daf1d9f"
+    />
 
-<!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Asteroids</title>
-<meta name="generator" content="Jekyll v3.9.0" />
-<meta property="og:title" content="Some Fun" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="A little easter egg fun" />
-<meta property="og:description" content="A little easter egg fun" />
-<link rel="canonical" href="https://dominiek.github.io/asteroids/" />
-<meta property="og:url" content="https://dominiek.github.io/asteroids/" />
-<meta property="og:site_name" content="asteroids" />
-<meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Some Fun" />
-<script type="application/ld+json">
-{"url":"https://dominiek.github.io/asteroids/","@type":"WebSite","headline":"Some Fun","description":"A little easter egg fun","name":"asteroids","@context":"https://schema.org"}</script>
-<!-- End Jekyll SEO tag -->
-
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+    <title>Asteroids</title>
+    <meta name="generator" content="Jekyll v3.9.0" />
+    <meta property="og:title" content="Some Fun" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="description" content="A little easter egg fun" />
+    <meta property="og:description" content="A little easter egg fun" />
+    <link rel="canonical" href="https://dominiek.github.io/asteroids/" />
+    <meta property="og:url" content="https://dominiek.github.io/asteroids/" />
+    <meta property="og:site_name" content="asteroids" />
+    <meta name="twitter:card" content="summary" />
+    <meta property="twitter:title" content="Some Fun" />
+    <script type="application/ld+json">
+      {
+        "url": "https://dominiek.github.io/asteroids/",
+        "@type": "WebSite",
+        "headline": "Some Fun",
+        "description": "A little easter egg fun",
+        "name": "asteroids",
+        "@context": "https://schema.org"
+      }
+    </script>
+    <!-- End Jekyll SEO tag -->
   </head>
 
   <body>
-
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/dominiek/asteroids">View on GitHub</a>
+      <header class="inner">
+        <a id="forkme_banner" href="https://github.com/dominiek/asteroids"
+          >View on GitHub</a
+        >
 
-          <h1 id="project_title">Asteroids</h1>
-          <h2 id="project_tagline">Follow the white rabbit</h2>
-
-          
-        </header>
+        <h1 id="project_title">Asteroids</h1>
+        <h2 id="project_tagline">Follow the white rabbit</h2>
+      </header>
     </div>
 
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-<p>
-Audio pimped up version of Erkie's awesome Asteroids bookmarklet: <a href="https://github.com/erkie/erkie.github.com">https://github.com/erkie/erkie.github.com</a>.
-</p>
+        <p>
+          Audio pimped up version of Erkie's awesome Asteroids bookmarklet:
+          <a href="https://github.com/erkie/erkie.github.com"
+            >https://github.com/erkie/erkie.github.com</a
+          >.
+        </p>
 
-<p>Click the PI symbol in the corner</p>
+        <p>Click the PI symbol in the corner</p>
       </section>
     </div>
 
     <!-- FOOTER  -->
     <div id="footer_wrap" class="outer">
       <footer class="inner">
-        
-        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
-      
-    
-    </footer>
+        <p>
+          Published with <a href="https://pages.github.com">GitHub Pages</a>
+        </p>
+      </footer>
     </div>
     <script>
-        function loadAsteroids() {
-            var script = document.createElement("script");
-            script.setAttribute('type', 'text/javascript');
-            script.src = "https://dominiek.github.io/asteroids/run.js";
-            document.getElementsByTagName('head')[0].appendChild(script);
-        }
+      function loadAsteroids() {
+        var baseUrl = "https://dominiek.github.com/asteroids/";
+        var script = document.createElement("script");
+        script.setAttribute("type", "text/javascript");
+        script.src = "/three.min.js";
+        document.getElementsByTagName("head")[0].appendChild(script);
+        var script2 = document.createElement("script");
+        script2.setAttribute("type", "text/javascript");
+        script2.src = "/run.js";
+        document.getElementsByTagName("head")[0].appendChild(script2);
+      }
     </script>
-    <div onclick="loadAsteroids();" style="font-size: 8px; color: #ccc; display: block; position: absolute; right: 10px; bottom: 10px">π</div>
+    <div
+      onclick="loadAsteroids();"
+      style="
+        font-size: 8px;
+        color: #ccc;
+        display: block;
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+      "
+    >
+      π
+    </div>
   </body>
 </html>
-
