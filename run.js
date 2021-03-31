@@ -436,9 +436,9 @@ window.playAsteroids = function () {
       playerHeight = 30;
 
     var playerVerts = [
-      [(-1 * playerHeight) / 2, (-1 * playerWidth) / 2],
-      [(-1 * playerHeight) / 2, playerWidth / 2],
-      [playerHeight / 2, 0],
+      [-15, -10],
+      [-15, 10],
+      [15, 0],
     ];
 
     var ignoredTypes = [
@@ -923,11 +923,39 @@ window.playAsteroids = function () {
         borderRadius = "5px";
         opacity = "0.60";
       }
-      this.howto.innerHTML = "Use arrow keys to move, space bar to shoot";
+      this.howto.innerHTML = "Use arrow keys to move, space bar to shoot!";
       this.gameContainer.appendChild(this.howto);
       setTimeout(() => {
         this.gameContainer.removeChild(this.howto);
       }, 5000);
+    }
+
+    if (!document.getElementById("ASTEROIDS-ATTRIBUTION")) {
+      this.attribution = document.createElement("div");
+      this.attribution.id = "ASTEROIDS-ATTRIBUTION";
+      this.attribution.className = "ASTEROIDSYEAH";
+      with (this.attribution.style) {
+        fontFamily = "Arial,sans-serif";
+        fontSize = "20px";
+        lineHeight = "20px";
+        padding = "10px";
+        position = "fixed";
+        zIndex = "10001";
+        bottom = "20px";
+        right = "20px";
+        textAlign = "left";
+        background = "#000";
+        color = "#fff";
+        width = "40%";
+        borderRadius = "5px";
+        opacity = "0.60";
+      }
+      this.attribution.innerHTML =
+        'Original game by <a style="color: white" href="http://www.rootof.com/">Rootof Creations</a> - music by <a style="color: white" href="https://demozoo.org/sceners/10035/">Estrayk</a>';
+      this.gameContainer.appendChild(this.attribution);
+      setTimeout(() => {
+        this.gameContainer.removeChild(this.attribution);
+      }, 9000);
     }
 
     // Because IE quirks does not understand position: fixed we set to absolute and just reposition it everything frame
@@ -1087,7 +1115,7 @@ window.playAsteroids = function () {
         this.tracePoly(playerVerts);
         this.fillStyle = "#f6931d";
         this.fill();
-        this.tracePoly(playerVerts);
+        //this.tracePoly(playerVerts);
         this.stroke();
         this.restore();
       } else {
